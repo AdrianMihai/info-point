@@ -1,0 +1,87 @@
+
+/*
+key frames for animating
+the google maps markers
+of the institutions
+*/
+@keyframes instMarker{
+	from {
+		background: #333;
+	}
+	to {
+		background: #aaff00;
+	}
+}
+
+.navbar{
+	position: absolute;
+	
+	background-color: rgba(0, 0, 0, 0.75);
+}
+.mdl-layout__drawer-button{
+	border-radius: 50%;
+}
+
+.searchInput{
+	color: #fff;
+	border-color: #fff;
+}
+
+.filter-dropdown {
+	position: absolute;
+	top: calc(100% - 15px);	
+	max-height: 0%;
+
+	border-radius: 4px;
+	background: #333;
+	color: #fff !important;
+
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+}
+
+.filter-dropdown ul {
+	width: 250px;
+
+}
+
+.filter-dropdown ul li {
+	color: #fff !important;
+	border:1px solid transparent;
+
+	cursor: pointer;
+	transition: all .4s ease-in-out;
+}
+
+.filter-dropdown ul li:hover{
+	color: #333 !important;
+	background: #fff;
+	border-radius: 4px;
+}
+
+.instMarkerAnimation {
+	animation-name: instMarker;
+	animation-duration: 0.75s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.instMarker {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+
+	border-radius: 50%;
+	border:1px solid #404040;
+	background: #333;
+	
+	pointer-events: auto !important;
+	cursor: pointer;
+}
+
+/*.mdl-textfield:hover .filter-dropdown {
+	max-height: initial;
+	opacity: 1;
+}
+*/
