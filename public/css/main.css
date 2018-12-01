@@ -27,6 +27,10 @@ of the institutions
 	border-color: #fff;
 }
 
+.searchActionForm .clearButton{
+	left: calc(100% - 32px);
+}
+
 .filter-dropdown {
 	position: absolute;
 	top: calc(100% - 15px);	
