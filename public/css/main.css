@@ -13,6 +13,18 @@ of the institutions
 	}
 }
 
+@keyframes actionDropdownAnimation{
+	from{
+		opacity: 0;
+		max-height: 0;
+	}
+
+	to{
+		opacity: 1;
+		max-height: initial;
+	}
+}
+
 .navbar{
 	position: absolute;
 	
@@ -33,16 +45,36 @@ of the institutions
 
 .filter-dropdown {
 	position: absolute;
-	top: calc(100% - 15px);	
-	max-height: 0%;
+	top: calc(100% - 15px);
 
 	border-radius: 4px;
 	background: #333;
 	color: #fff !important;
 
 	overflow: hidden;
-	opacity: 0;
 	transition: all 0.4s ease-in-out;
+}
+
+.filter-dropdown.openDropdown-enter {
+	opacity: 0;
+	max-height: 0;
+}
+
+.filter-dropdown.openDropdown-enter-active{
+	opacity: 1;
+	max-height: initial;
+	transition: all 0.4s ease-in-out;
+}
+
+.filter-dropdown.openDropdown-leave {
+	opacity: 1;
+	max-height: initial;
+}
+
+.filter-dropdown.openDropdown-leave-active{
+	opacity: 0;
+	max-height: 0;
+	transition: all 0.5s ease-in-out;
 }
 
 .filter-dropdown ul {

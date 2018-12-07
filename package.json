@@ -30,7 +30,8 @@
     "mysql": "^2.16.0",
     "react": "^16.6.1",
     "react-async-script-loader": "^0.3.0",
-    "react-dom": "^16.6.1"
+    "react-dom": "^16.6.1",
+    "react-transition-group": "^1.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
