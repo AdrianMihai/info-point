@@ -116,6 +116,42 @@ of the institutions
 	cursor: pointer;
 }
 
+.currentPositionButton{
+	position: absolute;
+	bottom: 80px;
+	right: 10px;
+	width: 32px;
+	height: 32px;
+	padding: 3px;
+
+	background: white;
+	border:1px solid #d9d9d9;
+	border-radius: 4px;
+
+	box-shadow: 0px 1px 15px #333;
+	transition: all .4s ease-in-out;
+	cursor: pointer;
+	z-index: 9999;
+}
+
+.currentPositionButton:hover{
+	background: #66c2ff;
+}
+
+.currentPositionButton:hover .material-icons{
+	transform: translateY(-15px) skew(-35deg, 10deg);
+	text-shadow: 13px 15px 2px #333;
+	color: #fff;
+}
+
+.currentPositionButton .material-icons{
+	position: relative;
+	top: calc(50% - 12px);
+	left: calc(50% - 12px);
+
+	cursor: pointer;
+	transition: all .4s ease-in-out;
+}
 /*.mdl-textfield:hover .filter-dropdown {
 	max-height: initial;
 	opacity: 1;
