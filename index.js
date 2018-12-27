@@ -93,7 +93,7 @@ if (env === 'production'){
     
     app.use(forceSsl);
 
-    server = require('http').createServer(app);
+    server = require('http').Server(app);
 }
 else {
 	server = require('https').createServer(
