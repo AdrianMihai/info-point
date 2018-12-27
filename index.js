@@ -30,11 +30,6 @@ const forceSsl = function(req, res, next) {
     return next();
 };
 
-if (env === 'production'){
-    
-    app.use(forceSsl); 
-}
-
 //application resources folders setup
 app.use('/public', express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/node_modules'));
@@ -92,10 +87,20 @@ app.get('/getActionInstructions/:actId', (req, res) => {
     });
 });
 
-server = require('https').createServer(
+
+
+if (env === 'production'){
+    
+    app.use(forceSsl);
+
+    server = require('http').createServer(app);
+}
+else {
+	server = require('https').createServer(
     {
         key: fs.readFileSync('server.key'),
         cert: fs.readFileSync('server.cert')
     }, app); 
+}
 
 server.listen(port);
