@@ -8,7 +8,7 @@ const express = require('express'),
     port = process.env.PORT || 3000,
     env = process.env.NODE_ENV || 'development',
     cloneDeep = require('lodash.clonedeep');
-var server;
+let server;
 
 const dbConnection = mySql.createConnection({
     host: "r6ze0q02l4me77k3.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
@@ -31,15 +31,8 @@ const forceSsl = function(req, res, next) {
 };
 
 if (env === 'production'){
-    server = require('http').Server(app);
-    app.use(forceSsl);
-}
-else {
-    const https = require('https');
-    server = https.createServer({
-        key: fs.readFileSync('server.key'),
-        cert: fs.readFileSync('server.cert')
-    }, app);
+    
+    app.use(forceSsl); 
 }
 
 //application resources folders setup
@@ -98,5 +91,11 @@ app.get('/getActionInstructions/:actId', (req, res) => {
         res.send(JSON.stringify(results)); 
     });
 });
+
+server = require('https').createServer(
+    {
+        key: fs.readFileSync('server.key'),
+        cert: fs.readFileSync('server.cert')
+    }, app); 
 
 server.listen(port);
