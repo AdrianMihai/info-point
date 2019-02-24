@@ -1,0 +1,118 @@
+[
+    {"1":[
+        {
+            "name":"Nume",
+            "type":"text",
+            "maxLength":"255",
+            "minLength":"1",
+            "values":[],
+            "isMandatory":true
+        },
+        {
+            "name": "Prenume",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true
+        },
+        {
+            "name": "Sex",
+            "type": "radio",
+            "maxLength": null,
+            "minLength": null,
+            "values": ["M","F"],
+            "isMandatory": true
+        },
+        {
+            "name": "Nume Mama",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true},
+        {
+            "name": "Nume  Tata",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true},
+        {
+            "name": "Localitate/Judet nastere ",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true},
+        {
+            "name": "Data Nastere",
+            "type": "date",
+            "maxLength": null,
+            "minLength": null,
+            "values": [],
+            "isMandatory": true},
+        {
+            "name": "Adresa Curenta",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true},
+        {
+            "name": "Adresa Veche",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": false},
+        {
+            "name": "Nume Anteroior",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": false
+        },    
+        {
+            "name": "Stare Civila",
+            "type": "radio",
+            "maxLength": null,
+            "minLength": null,
+            "values": ["Necasatorit/a","Casatorit/a","Divortat/a","Vaduv/a"],
+            "isMandatory": true
+        },
+        {
+            "name": "Situatie Militara",
+            "type": "radio",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": ["Cadru Activ", "Rezervist", "Recrut", "Fara Obligatii Militare"],
+            "isMandatory": true
+        },
+        {
+            "name": "Ultima Scoala Absolvita",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true
+        },
+        {
+            "name": "Ocupatie Actuala",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true
+        },
+        {
+            "name": "Motiv",
+            "type": "text",
+            "maxLength": "255",
+            "minLength": "1",
+            "values": [],
+            "isMandatory": true
+        }
+    ]}
+]

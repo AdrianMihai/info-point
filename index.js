@@ -7,7 +7,8 @@ const express = require('express'),
     cookieSession = require('cookie-session'),
     port = process.env.PORT || 3000,
     env = process.env.NODE_ENV || 'development',
-    cloneDeep = require('lodash.clonedeep');
+    cloneDeep = require('lodash.clonedeep'),
+    institutionsApiHelper = require('./api/institutionsData');
 let server;
 
 const dbConnection = mySql.createConnection({
@@ -24,7 +25,8 @@ dbConnection.connect(function(error){
 });
 
 const forceSsl = function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
+    //console.log(req.headers);
+    if (req.get('x-forwarded-proto') !== 'https') {
         return res.redirect(['https://', req.get('Host'), req.url].join(''));
     }
     return next();
@@ -58,21 +60,17 @@ app.get('/', (req, res) => {
 
 });
 
-app.get('/getInstitutions', (req, res) => {
-    dbConnection.query('SELECT * FROM Institutions', function(error, results, fields) {
-        if (error)
-            throw error;
-        console.log(results);
+app.get('/getInstitutions', (request, response) => {
 
-        res.send(JSON.stringify(results));
-    });
+    institutionsApiHelper.getAllInstitutionsData(dbConnection, response);
+
 });
 
 app.get('/getInstitutionActions/:instId', (req, res) => {
     dbConnection.query('SELECT * FROM `Actions` WHERE `InstitutionId` = ?', [req.params.instId], function(error, results, fields) {
         if (error)
             throw error;
-        console.log(results);  
+        //console.log(results);  
         res.send(JSON.stringify(results));  
     });
 });
@@ -81,26 +79,28 @@ app.get('/getActionInstructions/:actId', (req, res) => {
     dbConnection.query('SELECT * FROM ActionInstructions WHERE ActionId = ?', [req.params.actId], function(error, results, fields) {
         if (error)
             throw error;
-        console.log(results);
+        //console.log(results);
 
         res.send(JSON.stringify(results)); 
     });
 });
 
-
-
 if (env === 'production'){
     
+    console.log('production');
     app.use(forceSsl);
 
     server = require('http').Server(app);
 }
-else {
+else if (env === 'development'){
+
+    console.log('development');
+
 	server = require('https').createServer(
     {
         key: fs.readFileSync('server.key'),
         cert: fs.readFileSync('server.cert')
-    }, app); 
+    }, app);
 }
 
 server.listen(port);
