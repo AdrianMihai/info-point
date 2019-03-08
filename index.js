@@ -8,7 +8,9 @@ const express = require('express'),
     port = process.env.PORT || 3000,
     env = process.env.NODE_ENV || 'development',
     cloneDeep = require('lodash.clonedeep'),
-    institutionsApiHelper = require('./api/institutionsData');
+    institutionsApiHelper = require('./api/institutionsData'),
+    redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
+ 
 let server;
 
 const dbConnection = mySql.createConnection({
@@ -46,6 +48,9 @@ app.use(cookieSession({
     keys: ['whatever'],
     maxAge: 24 * 60 * 60 * 1000
 }));
+
+//redirect http to https
+app.use(redirectToHTTPS([], []));
 
 app.get('/', (req, res) => {
     res.type('text/html');
@@ -85,10 +90,11 @@ app.get('/getActionInstructions/:actId', (req, res) => {
     });
 });
 
+
+
 if (env === 'production'){
     
     console.log('production');
-    app.use(forceSsl);
 
     server = require('http').Server(app);
 }

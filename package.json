@@ -26,6 +26,7 @@
   "dependencies": {
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
+    "express-http-to-https": "^1.1.4",
     "lodash.clonedeep": "^4.5.0",
     "mysql": "^2.16.0",
     "react": "^16.7.0",
