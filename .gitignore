@@ -5,3 +5,4 @@ server.key
 .vs
 dbCredentials.json
 webpack.config.js
+.babelrc
