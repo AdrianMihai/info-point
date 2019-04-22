@@ -1,6 +1,6 @@
 # Info Point
 Info point is an application designed to help with actions that have to be done at local institutions.
-Application [Info Point](https://info-point.herokuapp.com/).
+The application can be found [here](https://info-point.herokuapp.com/).
 
 # Node modules
 Run `npm install` to install all the javascript dependencies.
