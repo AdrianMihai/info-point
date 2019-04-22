@@ -30,8 +30,15 @@ of the institutions
 	
 	background-color: rgba(0, 0, 0, 0.75);
 }
+
+.fb-login-button {
+	width: 160px;
+	background: #3b5998 !important;
+}
+
 .mdl-layout__drawer-button{
 	border-radius: 50%;
+	background-color: rgba(51, 51, 51, 0.75) !important;
 }
 
 .searchInput{
@@ -59,7 +66,6 @@ of the institutions
 .filter-dropdown-enter {
 	opacity: 0;
 	max-height: 0;
-	transition: all 0.4s ease-in-out;
 }
 
 .filter-dropdown-enter-active{
@@ -76,13 +82,13 @@ of the institutions
 .filter-dropdown-exit {
 	opacity: 1;
 	max-height: initial;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
-.filter-dropdown-exit-active{
+.filter-dropdown-exit-active, .filter-dropdown-exit-done{
 	opacity: 0;
 	max-height: 0;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
 .filter-dropdown ul {
@@ -169,11 +175,12 @@ of the institutions
 	position: fixed;
 	height: 100%;
     right: 0;
-    transform:translateX(calc(100% + 20px));
 
     color: #333;
     background: #fafafa;
     box-shadow: -1px 0px 20px #737373;
+    transform:translateX(calc(100% + 20px));
+    overflow-x: hidden;
     z-index: 10000;
 }
 
@@ -200,7 +207,7 @@ of the institutions
 }
 
 .institution-tab .mdl-grid:first-child .mdl-cell {
-	margin-top: 15px;
+	/*margin-top: 15px;*/
 }
 
 .institution-tab .mdl-grid:first-child .mdl-cell:nth-child(2) {
@@ -215,37 +222,101 @@ of the institutions
 .institution-tab .close-button {
 	margin-top: 8%; 
 	cursor: pointer;
-	transition: all .4s ease-in-out;
+	transition: all .4s ease-out;
 }
 
 .institution-tab .close-button:hover {
-	border-radius: 8px;
 	color: #EF5350;
-	background: #333;
 }
 
-.institution-tab .mdl-grid:nth-child(2) .mdl-cell:first-child h5 {
+.institution-tab .actions-list-container {
+	display: none;
+	position: relative;
+
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+
+.institution-tab .actions-list-container-enter-active, .institution-tab .actions-list-container-enter-done {
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	opacity: 1;
+}
+
+.institution-tab .actions-list-container-exit-active, .institution-tab .actions-list-container-exit-done{
+	display: none;
+	opacity: 0;
+} 
+
+.institution-tab .actions-list-container .mdl-cell:first-child h5 {
 	margin: 0px;
 	padding: 10px;
 }
 
-.institution-tab .mdl-grid:nth-child(2) .mdl-cell:nth-child(2) ul {
+.institution-tab .actions-list-container .mdl-cell:nth-child(2) ul {
 	max-width: 300px;
 	margin: 0px;
 	padding: 0px;
 	padding-left: 25px;
 }
 
-.institution-tab .mdl-grid:nth-child(2) .mdl-cell:nth-child(2) ul li {
+.institution-tab .actions-list-container .mdl-cell:nth-child(2) ul li {
 	border: 1px solid transparent;
 	cursor: pointer;
 	transition: all .4s ease-in-out;
 }
 
-.institution-tab .mdl-grid:nth-child(2) .mdl-cell:nth-child(2) ul li:hover {
+.institution-tab .actions-list-container .mdl-cell:nth-child(2) ul li:hover {
 	border-color: #333;
 	border-radius: 8px;	
 }
+
+
+.institution-tab .action-steps-container {
+	display: none;
+	top:0px;
+
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+
+.institution-tab .action-steps-container  .back-button{
+	margin-top: 0px;
+	cursor: pointer;
+}
+
+.institution-tab .action-steps-container  .instruction-name{
+	margin: 0px;
+	margin-top: 2px;
+}
+
+.institution-tab .action-steps-container .progress-bar{
+	position: absolute;
+	bottom: 0px;
+}
+
+.institution-tab .action-steps-container .progress-bar .dot{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 4px;
+
+	border-radius: 50%;
+	border: 1px solid #333;
+}
+
+.institution-tab .action-steps-container .progress-bar .marked-dot{
+	background-color: #3a3d3f;
+}
+
+.institution-tab .action-steps-container-enter-active, .institution-tab .action-steps-container-enter-done {
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    opacity: 1;
+}
+
+
 
 /*.mdl-textfield:hover .filter-dropdown {
 	max-height: initial;

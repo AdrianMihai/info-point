@@ -13,12 +13,9 @@ const express = require('express'),
  
 let server;
 
-const dbConnection = mySql.createConnection({
-    host: "r6ze0q02l4me77k3.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
-    user: "qnb696pnrf7r8nos",
-    password: "irsiotaejg0o046h",
-    database: "sdgdzt8r494bddye"
-});
+
+//acquire database credentials and create a connection
+const dbConnection = mySql.createConnection( require('./config/databaseConnection').getDatabaseCredentials(fs) );
 
 dbConnection.connect(function(error){
     if (error)
@@ -26,13 +23,13 @@ dbConnection.connect(function(error){
     console.log("Connected to the database!");
 });
 
-const forceSsl = function(req, res, next) {
+/*const forceSsl = function(req, res, next) {
     //console.log(req.headers);
     if (req.get('x-forwarded-proto') !== 'https') {
         return res.redirect(['https://', req.get('Host'), req.url].join(''));
     }
     return next();
-};
+};*/
 
 //application resources folders setup
 app.use('/public', express.static(__dirname + '/public'));
@@ -52,6 +49,7 @@ app.use(cookieSession({
 //redirect http to https
 app.use(redirectToHTTPS([], []));
 
+//set up routes
 app.get('/', (req, res) => {
     res.type('text/html');
 
@@ -71,27 +69,9 @@ app.get('/getInstitutions', (request, response) => {
 
 });
 
-app.get('/getInstitutionActions/:instId', (req, res) => {
-    dbConnection.query('SELECT * FROM `Actions` WHERE `InstitutionId` = ?', [req.params.instId], function(error, results, fields) {
-        if (error)
-            throw error;
-        //console.log(results);  
-        res.send(JSON.stringify(results));  
-    });
-});
-
-app.get('/getActionInstructions/:actId', (req, res) => {
-    dbConnection.query('SELECT * FROM ActionInstructions WHERE ActionId = ?', [req.params.actId], function(error, results, fields) {
-        if (error)
-            throw error;
-        //console.log(results);
-
-        res.send(JSON.stringify(results)); 
-    });
-});
 
 
-
+//create the server object and start listening to requests
 if (env === 'production'){
     
     console.log('production');

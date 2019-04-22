@@ -24,49 +24,181 @@
         "isMandatory": true
     },
     {
-        "name": "Nume Mama",
+        "name": "Numele mamei",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",
         "values": [],
-        "isMandatory": true},
+        "isMandatory": true
+    },
     {
-        "name": "Nume Tata",
+        "name": "Numele tatălui",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",
         "values": [],
-        "isMandatory": true},
+        "isMandatory": true
+    },
     {
-        "name": "Localitate/Judet nastere ",
+        "name": "City",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",
         "values": [],
-        "isMandatory": true},
+        "isMandatory": true
+    },
     {
-        "name": "Data Nastere",
-        "type": "date",
+        "name": "Day",
+        "type": "select",
+        "maxLength": null,
+        "minLength": null,
+        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+        "isMandatory": true
+    },
+    {
+        "name": "Month",
+        "type": "select",
         "maxLength": null,
         "minLength": null,
         "values": [],
-        "isMandatory": true},
+        "isMandatory": true
+    },
     {
-        "name": "Adresa Curenta",
-        "type": "text",
-        "maxLength": "255",
-        "minLength": "1",
+        "name": "Year",
+        "type": "select",
+        "maxLength": null,
+        "minLength": null,
         "values": [],
-        "isMandatory": true},
+        "isMandatory": true
+    },
     {
-        "name": "Adresa Veche",
-        "type": "text",
-        "maxLength": "255",
-        "minLength": "1",
-        "values": [],
-        "isMandatory": false},
+        "name": "Current Address",
+        "group": true,
+        "fields": 
+	        [
+	        	{
+	        		"name": "City/Village/Sector",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "County",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Street",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Number",
+	        		"type": "text",
+			        "maxLength": "50",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Block",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Block Number",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Apartment",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	}
+	        ]
+    },
     {
-        "name": "Nume Anteroior",
+        "name": "Old Address",
+        "group": true,
+        "fields": 
+	        [
+	        	{
+	        		"name": "City/Village/Sector",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "County",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Street",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Number",
+	        		"type": "text",
+			        "maxLength": "50",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Block",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Block Number",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	},
+	        	{
+	        		"name": "Apartment",
+	        		"type": "text",
+			        "maxLength": "255",
+			        "minLength": "1",
+			        "values": [],
+			        "isMandatory": true
+	        	}
+	        ]
+    },
+    {
+        "name": "Previous Name",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",
@@ -74,23 +206,23 @@
         "isMandatory": false
     },    
     {
-        "name": "Stare Civila",
+        "name": "Civil State",
         "type": "radio",
         "maxLength": null,
         "minLength": null,
-        "values": ["Necasatorit/a","Casatorit/a","Divortat/a","Vaduv/a"],
+        "values": ["Single/a","Married/a","Divorced/a","Widowed/a"],
         "isMandatory": true
     },
     {
-        "name": "Situatie Militara",
+        "name": "Military Status",
         "type": "radio",
         "maxLength": "255",
         "minLength": "1",
-        "values": ["Cadru Activ", "Rezervist", "Recrut", "Fara Obligatii Militare"],
+        "values": ["Active Duty", "Reserve", "Recruit", "Non-Military"],
         "isMandatory": true
     },
     {
-        "name": "Ultima Scoala Absolvita",
+        "name": "Last",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",
@@ -98,7 +230,7 @@
         "isMandatory": true
     },
     {
-        "name": "Ocupatie Actuala",
+        "name": "Current Occupation",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",
@@ -106,7 +238,7 @@
         "isMandatory": true
     },
     {
-        "name": "Motiv",
+        "name": "Reason",
         "type": "text",
         "maxLength": "255",
         "minLength": "1",

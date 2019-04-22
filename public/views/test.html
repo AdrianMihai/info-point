@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Custom Marker Test</title>
+
+		<style type="text/css">
+			@keyframes instMarker{
+				from {
+					background: #333;
+				}
+				to {
+					background: #aaff00;
+				}
+			}
+
+			.instMarkerAnimation {
+				animation-name: instMarker;
+				animation-duration: 0.75s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+			
+			.instMarker {
+				position: absolute;
+				top: calc(50% - 16px);
+				left: calc(50% - 16px);
+				width: 32px;
+				height: 32px;
+
+				border-radius: 50%;
+				border:1px solid #404040;
+				background: #333;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "instMarker instMarkerAnimation">
+
+		</div>
+
+	</body>
+</html>

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "express-http-to-https": "^1.1.4",
     "lodash.clonedeep": "^4.5.0",
     "mysql": "^2.16.0",
+    "npm": "^6.9.0",
     "react": "^16.7.0",
     "react-async-script-loader": "^0.3.0",
     "react-dom": "^16.7.0",
@@ -39,7 +41,6 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^3.2.0",
